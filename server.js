@@ -34,7 +34,7 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
 slapp.message('^(.*?)(dlouho|kdy|datum).*?([Bb]rutal(u)?).*?\\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
-  msg.say("Zatim nevime, datum Brutalu jeste neni oficialni");
+  msg.say("Datum Brutalu jeste neni oficialni, pouze odhadujeme\n"+ timespanReply("Brutal Assault", new Date(2018, 7, 8)));
 });
 
 slapp.message('^(.*?)(dlouho|kdy|datum).*?([Oo]bscen[eu]).*?\\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
