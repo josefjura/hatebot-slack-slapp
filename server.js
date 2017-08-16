@@ -37,7 +37,7 @@ slapp.message('^(.*?)(dlouho|kdy|datum).*?([Bb]rutal(u)?).*?\?.*?$', ['mention',
   msg.say("Nasrat Brutal");
 });
 
-slapp.message('^(.*?)(dlouho|kdy|datum).*?([Oo]bscen(u)?).*?\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
+slapp.message('^(.*?)(dlouho|kdy|datum).*?([Oo]bscen[eu]]).*?\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
   msg.say("Nasrat Obscene");
 });
 
