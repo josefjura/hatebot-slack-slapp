@@ -33,11 +33,11 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 })
 
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
-slapp.message('^(.*?)(dlouho|kdy|datum).*?([Bb]rutal(u)?).*?\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
+slapp.message('^(.*?)(dlouho|kdy|datum).*?([Bb]rutal(u)?).*?\\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
   msg.say("Nasrat Brutal");
 });
 
-slapp.message('^(.*?)(dlouho|kdy|datum).*?([Oo]bscen[eu]]).*?\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
+slapp.message('^(.*?)(dlouho|kdy|datum).*?([Oo]bscen[eu]]).*?\\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
   msg.say("Nasrat Obscene");
 });
 
