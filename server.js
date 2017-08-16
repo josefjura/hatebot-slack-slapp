@@ -41,6 +41,11 @@ slapp.message('^(.*?)(dlouho|kdy|datum).*?([Oo]bscen(u)?).*?\?.*?$', ['mention',
   msg.say("Nasrat Obscene");
 });
 
+slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
+  // respond only 40% of the time
+    msg.say('Co to meles hovadko?')
+})
+
 // attach Slapp to express server
 var server = slapp.attachToExpress(express())
 
