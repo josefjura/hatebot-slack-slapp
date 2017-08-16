@@ -34,11 +34,11 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
 slapp.message('^(.*?)(dlouho|kdy|datum).*?([Bb]rutal(u)?).*?\\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
-  msg.say("Nasrat Brutal");
+  msg.say("Zatim nevime, datum Brutalu jeste neni oficialni");
 });
 
 slapp.message('^(.*?)(dlouho|kdy|datum).*?([Oo]bscen[eu]).*?\\?.*?$', ['mention', 'direct_message'], (msg, text, greeting) => {
-  msg.say("Nasrat Obscene");
+  msg.say(timespanReply("Obscene Extreme", new Date(2018, 6, 18)));
 });
 
 slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
@@ -57,3 +57,13 @@ server.listen(port, (err) => {
 
   console.log(`Listening on port ${port}`)
 })
+
+
+function timespanReply(eventName, date){
+  return eventName + " zacina za " + dateDiff(date) + " dni";
+}
+
+function dateDiff(date) {
+  var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  return Math.round(Math.abs((date.getTime() - Date.now()) / (oneDay)));
+}
